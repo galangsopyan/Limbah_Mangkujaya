@@ -502,7 +502,7 @@ export default function LandingPage() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute -bottom-20 left-4 z-10" hidden rounded-2xl border border-white/10 bg-white p-5 shadow-2xl sm:block"
+              className="absolute -bottom-20 left-4 z-15" hidden rounded-2xl border border-white/10 bg-white p-5 shadow-2xl sm:block"
             >
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-green-100 text-green-600">
