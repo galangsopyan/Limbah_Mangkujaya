@@ -1117,7 +1117,7 @@ export default function LandingPage() {
       </section>
 
      {/* ================= FOOTER ================= */}
-<footer className="bg-slate-950 text-white">
+<footer className="bg-slate-950 text-white text-center">
   <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
     <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
@@ -1130,7 +1130,7 @@ export default function LandingPage() {
 
           <div>
             <p className="text-sm font-black tracking-wide">
-              LIMBAHMANGKU JAYA
+              LIMBAH MANGKU JAYA
             </p>
             <p className="text-xs text-slate-400">
               Professional Service
@@ -1213,24 +1213,25 @@ export default function LandingPage() {
     </div>
 
     {/* Copyright */}
-    <div className="mt-14 flex flex-col justify-between gap-4 border-t border-white/10 pt-7 text-xs text-slate-500 sm:flex-row">
-      <p>
-        © {new Date().getFullYear()} Limbah Mangku Jaya. All
-        rights reserved.
-      </p>
+    <div className="relative mt-10 border-t border-slate-800 pt-8">
+  {/* Copyright - tengah */}
+  <p className="text-center text-sm text-slate-400">
+    © 2026 Limbah Mangku Jaya. All rights reserved.
+  </p>
 
-      <div className="flex gap-5">
-        <a href="#" className="hover:text-white">
-          Instagram
-        </a>
+      {/* Social media - kanan */}
+  <div className="mt-4 flex justify-center gap-6 text-sm text-slate-400 sm:absolute sm:right-0 sm:top-8 sm:mt-0">
+    <a href="#" className="hover:text-white transition">
+      Instagram
+    </a>
 
-        <a href="#" className="hover:text-white">
-          Facebook
-        </a>
+    <a href="#" className="hover:text-white transition">
+      Facebook
+    </a>
 
-        <a href="#" className="hover:text-white">
-          TikTok
-        </a>
+    <a href="#" className="hover:text-white transition">
+      TikTok
+    </a>
       </div>
     </div>
   </div>
