@@ -1116,112 +1116,138 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ================= FOOTER ================= */}
-      <footer className="bg-slate-950 text-white">
-        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-6">
-          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-            <div>
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-400/30 bg-gradient-to-br from-blue-500 to-blue-700 shadow-lg shadow-blue-600/30">
-                <span className="text-[15px] font-black italic tracking-tight text-white">
-                  LMS
-                </span>
-              </div>
-                  <p className="font-black">
-                    LIMBAH<span className="text-blue-500">MANGKU JAYA</span>
-                  </p>
-                  <p className="text-[9px] uppercase tracking-widest text-slate-500">
-                    Professional Service
-                  </p>
-                </div>
-              </div>
+     {/* ================= FOOTER ================= */}
+<footer className="bg-slate-950 text-white">
+  <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
-              <p className="mt-6 max-w-xs text-sm leading-7 text-slate-400">
-                Solusi profesional untuk barang bekas, scrap, mesin
-                industri dan likuidasi aset.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-black">Menu</h3>
-
-              <div className="mt-5 space-y-3 text-sm text-slate-400">
-                <FooterLink href="#beranda" text="Beranda" />
-                <FooterLink href="#layanan" text="Layanan" />
-                <FooterLink href="#portofolio" text="Portofolio" />
-                <FooterLink href="#harga" text="Harga" />
-                <FooterLink href="#kontak" text="Kontak" />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-black">Layanan</h3>
-
-              <div className="mt-5 space-y-3 text-sm text-slate-400">
-                <p>Besi Tua & Scrap</p>
-                <p>Komputer & Elektronik</p>
-                <p>AC & Mesin Pendingin</p>
-                <p>Mesin Industri</p>
-                <p>Bongkar Gudang</p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-black">Alamat Kami</h3>
-
-              <div className="mt-5 space-y-4 text-sm text-slate-400">
-                <div className="flex gap-3">
-                  <MapPin className="shrink-0 text-blue-500" size={18} />
-                  <span>
-                    Jl. Muwardi No.16, RT.7/RW.2, Grogol, Kec. Grogol petamburan, 
-                    <br />
-                    Kota Jakarta Barat, Indonesia
-                  </span>
-                </div>
-
-                <div className="flex gap-3">
-                  <Phone className="shrink-0 text-blue-500" size={18} />
-                  <span>+62 81320005406</span>
-                </div>
-
-                <div className="flex gap-3">
-                  <Mail className="shrink-0 text-blue-500" size={18} />
-                  <span>limbahmangkujaya@gmail.com</span>
-                </div>
-              </div>
-            </div>
+      {/* Brand */}
+      <div>
+        <div className="flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 font-black text-white">
+            LMS
           </div>
 
-          <div className="mt-14 flex flex-col justify-between gap-4 border-t border-white/10 pt-7 text-xs text-slate-500 sm:flex-row">
-            <p>
-              © {new Date().getFullYear()} Limbah Mangku Jaya. All
-              rights reserved.
+          <div>
+            <p className="text-sm font-black tracking-wide">
+              LIMBAHMANGKU JAYA
             </p>
-
-            <div className="flex gap-5">
-              <a href="#" className="hover:text-white">
-                Instagram
-              </a>
-              <a href="#" className="hover:text-white">
-                Facebook
-              </a>
-              <a href="#" className="hover:text-white">
-                TikTok
-              </a>
-            </div>
+            <p className="text-xs text-slate-400">
+              Professional Service
+            </p>
           </div>
         </div>
-      </footer>
 
-      {/* ================= FLOATING WHATSAPP ================= */}
-      <button
-        onClick={goWhatsApp}
-        aria-label="Chat WhatsApp"
-        className="fixed bottom-6 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-2xl shadow-green-900/30 transition hover:scale-110 hover:bg-green-600"
-      >
-        <MessageCircle size={25} />
-      </button>
-    </main>
-  );
+        <p className="mt-6 max-w-xs text-sm leading-7 text-slate-400">
+          Solusi profesional untuk barang bekas, scrap, mesin
+          industri dan likuidasi aset.
+        </p>
+      </div>
+
+      {/* Menu */}
+      <div>
+        <h3 className="font-black">Menu</h3>
+
+        <div className="mt-5 space-y-3 text-sm text-slate-400">
+          <FooterLink href="#beranda" text="Beranda" />
+          <FooterLink href="#layanan" text="Layanan" />
+          <FooterLink href="#portofolio" text="Portofolio" />
+          <FooterLink href="#harga" text="Harga" />
+          <FooterLink href="#kontak" text="Kontak" />
+        </div>
+      </div>
+
+      {/* Layanan */}
+      <div>
+        <h3 className="font-black">Layanan</h3>
+
+        <div className="mt-5 space-y-3 text-sm text-slate-400">
+          <p>Besi Tua &amp; Scrap</p>
+          <p>Komputer &amp; Elektronik</p>
+          <p>AC &amp; Mesin Pendingin</p>
+          <p>Mesin Industri</p>
+          <p>Bongkar Gudang</p>
+        </div>
+      </div>
+
+      {/* Alamat */}
+      <div>
+        <h3 className="font-black">Alamat Kami</h3>
+
+        <div className="mt-5 space-y-4 text-sm text-slate-400">
+
+          <div className="flex gap-3">
+            <MapPin
+              className="shrink-0 text-blue-500"
+              size={18}
+            />
+
+            <span>
+              Jl. Muwardi No.16, RT.7/RW.2, Grogol,
+              Kec. Grogol petamburan,
+              <br />
+              Kota Jakarta Barat, Indonesia
+            </span>
+          </div>
+
+          <div className="flex gap-3">
+            <Phone
+              className="shrink-0 text-blue-500"
+              size={18}
+            />
+
+            <span>+62 81320005406</span>
+          </div>
+
+          <div className="flex gap-3">
+            <Mail
+              className="shrink-0 text-blue-500"
+              size={18}
+            />
+
+            <span>limbahmangkujaya@gmail.com</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    {/* Copyright */}
+    <div className="mt-14 flex flex-col justify-between gap-4 border-t border-white/10 pt-7 text-xs text-slate-500 sm:flex-row">
+      <p>
+        © {new Date().getFullYear()} Limbah Mangku Jaya. All
+        rights reserved.
+      </p>
+
+      <div className="flex gap-5">
+        <a href="#" className="hover:text-white">
+          Instagram
+        </a>
+
+        <a href="#" className="hover:text-white">
+          Facebook
+        </a>
+
+        <a href="#" className="hover:text-white">
+          TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{/* ================= FLOATING WHATSAPP ================= */}
+<button
+  onClick={goWhatsApp}
+  aria-label="Chat WhatsApp"
+  className="fixed bottom-6 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-2xl shadow-green-900/30 transition hover:scale-110 hover:bg-green-600"
+>
+  <MessageCircle size={25} />
+</button>
+
+</main>
+);
+
 }
 
 /* ================= COMPONENTS ================= */
@@ -1236,7 +1262,7 @@ function NavLink({
   return (
     <a
       href={href}
-      className="text-sm font-medium text-slate-300 transition hover:text-white"
+      className="text-sm font-semibold text-slate-600 transition hover:text-blue-600"
     >
       {children}
     </a>
@@ -1255,7 +1281,7 @@ function SectionTitle({
   dark?: boolean;
 }) {
   return (
-    <div className="mx-auto max-w-3xl text-center">
+    <div>
       <p
         className={`text-sm font-black uppercase tracking-[0.2em] ${
           dark ? "text-blue-400" : "text-blue-600"
@@ -1300,7 +1326,7 @@ function ProblemCard({
       className="rounded-3xl border border-slate-200 bg-white p-7"
     >
       <div className="flex items-center justify-between">
-        <span className="text-5xl font-black text-blue-600">
+        <span className="text-sm font-black text-slate-300">
           {number}
         </span>
 
@@ -1338,14 +1364,19 @@ function TrustItem({
   description: string;
 }) {
   return (
-    <div className="flex items-center justify-center gap-3">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+    <div className="flex items-center gap-3">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
         <Icon size={20} />
       </div>
 
       <div>
-        <p className="text-sm font-black text-slate-900">{title}</p>
-        <p className="text-xs text-slate-500">{description}</p>
+        <p className="text-sm font-black text-slate-900">
+          {title}
+        </p>
+
+        <p className="text-xs text-slate-500">
+          {description}
+        </p>
       </div>
     </div>
   );
@@ -1361,15 +1392,16 @@ function ContactInfo({
   text: string;
 }) {
   return (
-    <div className="flex items-center gap-4">
-      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
-        <Icon size={20} />
+    <div className="flex items-start gap-3">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+        <Icon size={18} />
       </div>
 
       <div>
         <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
           {title}
         </p>
+
         <p className="mt-1 text-sm font-semibold text-slate-700">
           {text}
         </p>
@@ -1386,7 +1418,10 @@ function FooterLink({
   text: string;
 }) {
   return (
-    <a href={href} className="block transition hover:text-white">
+    <a
+      href={href}
+      className="transition hover:text-white"
+    >
       {text}
     </a>
   );
