@@ -463,7 +463,7 @@ export default function LandingPage() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 to-slate-950">
                 <Image
                   src="/images/hero1.jpg"
-                  alt="UD Sekawan Teknik"
+                  alt="Limbah Mangku Jaya"
                   fill
                   priority
                   className="object-cover"
@@ -502,7 +502,7 @@ export default function LandingPage() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute -bottom-35 -left-5 z-5 hidden rounded-2xl border border-white/10 bg-white p-5 shadow-2xl sm:block"
+              className="absolute -bottom-39 -left-5 z-5 hidden rounded-2xl border border-white/10 bg-white p-5 shadow-2xl sm:block"
             >
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-green-100 text-green-600">
