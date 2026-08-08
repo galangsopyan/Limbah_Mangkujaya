@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
+
 import {
   ArrowRight,
   ArrowUpRight,
@@ -30,7 +32,7 @@ import {
   Zap,
 } from "lucide-react";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import ContactForm from "./contact-form";
 
 const WHATSAPP = "6281320005406";
@@ -52,6 +54,31 @@ const fadeUp = {
     },
   },
 };
+
+const slides = [
+  {
+    badge: "Solusi Cepat & Mudah Jual Barang Bekas Borongan",
+    title: "Kami Terima Semua Barang Bekas Anda",
+    description:
+      "Kami menerima segala jenis barang bekas Anda dengan harga kompetitif. Mulai dari AC, komputer, kulkas, hingga mesin industri.",
+    button: "FOTO BARANG",
+  },
+  {
+    badge: "Mitra Terpercaya Barang Bekas Anda",
+    title: "Solusi Barang Bekas Terintegrasi di Jabodetabek",
+    description:
+      "Melayani pembelian borongan secara profesional untuk berbagai jenis properti di seluruh wilayah Jabodetabek dan sekitarnya.",
+    button: "HUBUNGI KAMI SEKARANG",
+  },
+  {
+    badge: "Ingin Tahu Nilai Barang Bekas Anda?",
+    title: "Proses Transparan, Tanpa Biaya Tersembunyi",
+    description:
+      "Hubungi kami sekarang untuk mendapatkan penawaran terbaik. Proses penilaian cepat, mudah, dan sepenuhnya gratis!",
+    button: "KONSULTASI DENGAN KAMI",
+  },
+];
+
 
 const stagger = {
   hidden: {},
@@ -165,7 +192,7 @@ const testimonials = [
   {
     name: "Bapak Hendra",
     role: "Manager Operasional Pabrik",
-    text: "UD Sekawan Teknik sangat profesional dalam menangani likuidasi mesin-mesin pabrik kami. Proses penimbangan transparan dan tim bergerak cepat.",
+    text: "Limbah Mangku Jaya sangat profesional dalam menangani likuidasi mesin-mesin pabrik kami. Proses penimbangan transparan dan tim bergerak cepat.",
     initials: "H",
   },
   {
@@ -255,6 +282,49 @@ const faqs = [
 ];
 
 export default function LandingPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroSlides = [
+  {
+    badge: "Solusi Profesional & Terpercaya",
+    title: "Ubah Barang",
+    highlight: "Tidak Terpakai",
+    endTitle: "Menjadi Nilai.",
+    description:
+      "Kami membantu Anda menjual barang bekas, scrap logam, komputer, AC, mesin industri hingga likuidasi aset dengan proses cepat, transparan dan profesional.",
+    image: "/images/hero1.jpg",
+  },
+  {
+    badge: "Mitra Terpercaya Barang Bekas Anda",
+    title: "Kami Terima Semua",
+    highlight: "Barang Bekas",
+    endTitle: "Anda.",
+    description:
+      "Kami menerima segala jenis barang bekas Anda dengan harga kompetitif. Mulai dari AC, komputer, kulkas, hingga mesin industri. Didukung oleh tim yang berpengalaman.",
+    image: "/portfolio/portofolio3.jpg",
+  },
+  {
+    badge: "Ingin Tahu Nilai Barang Bekas Anda?",
+    title: "Proses Transparan,",
+    highlight: "Tanpa Biaya",
+    endTitle: "Tersembunyi.",
+    description:
+      "Hubungi kami sekarang untuk mendapatkan penawaran terbaik. Proses penilaian cepat, mudah, dan sepenuhnya gratis.",
+    image: "/portfolio/portofolio1.jpg",
+  },
+];
+
+  const nextSlide = () => {
+  setCurrentSlide((prev) =>
+    prev === heroSlides.length - 1 ? 0 : prev + 1
+  );
+};
+
+const prevSlide = () => {
+  setCurrentSlide((prev) =>
+    prev === 0 ? heroSlides.length - 1 : prev - 1
+  );
+};
   const [mobileMenu, setMobileMenu] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
@@ -272,16 +342,16 @@ export default function LandingPage() {
       {/* ================= NAVBAR ================= */}
       <header className="fixed left-0 right-0 top-0 z-50">
         <div className="mx-auto mt-4 max-w-7xl px-4 lg:px-6">
-          <nav className="rounded-2xl border border-white/20 bg-slate-950/80 px-4 py-3 shadow-xl backdrop-blur-xl">
+          <nav className="rounded-2xl border border-white/20 bg-slate-950/80 px-5 py-4 shadow-xl backdrop-blur-xl">
             <div className="flex items-center justify-between">
               {/* Logo */}
               <Link
                 href="#beranda"
                 className="flex items-center gap-3 text-white"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-400/30 bg-gradient-to-br from-blue-500 to-blue-700 shadow-lg shadow-blue-600/30">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-blue-400/30 bg-gradient-to-br from-blue-500 to-blue-700 shadow-lg shadow-blue-600/30">
                 <span className="text-[15px] font-black italic tracking-tight text-white">
-                LMS
+                LMJ
                 </span>
                 
                 </div>
@@ -297,7 +367,7 @@ export default function LandingPage() {
               </Link>
 
               {/* Desktop Menu */}
-              <div className="hidden items-center gap-7 lg:flex">
+              <div className="hidden items-center gap-10 lg:flex">
                 <NavLink href="#beranda">Beranda</NavLink>
                 <NavLink href="#layanan">Layanan</NavLink>
                 <NavLink href="#portofolio">Portofolio</NavLink>
@@ -362,161 +432,202 @@ export default function LandingPage() {
       </header>
 
       {/* ================= HERO ================= */}
-      <section
-        id="beranda"
-        className="relative flex min-h-[780px] items-center overflow-hidden bg-slate-950 pt-32"
+<section
+  id="beranda"
+  className="relative overflow-hidden bg-slate-950"
+>
+  {/* Background Glow */}
+  <div className="pointer-events-none absolute inset-0">
+    <div className="absolute left-1/4 top-1/3 h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[140px]" />
+    <div className="absolute right-0 top-1/4 h-[400px] w-[400px] rounded-full bg-blue-500/10 blur-[120px]" />
+  </div>
+
+  {/* Carousel */}
+  <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={currentSlide}
+        initial={{ opacity: 0, x: 80 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -80 }}
+        transition={{ duration: 0.45, ease: "easeOut" }}
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.15}
+        onDragEnd={(_, info) => {
+          if (
+            info.offset.x < -80 ||
+            info.velocity.x < -500
+          ) {
+            nextSlide();
+          }
+
+          if (
+            info.offset.x > 80 ||
+            info.velocity.x > 500
+          ) {
+            prevSlide();
+          }
+        }}
+        className="grid min-h-[760px] items-center gap-12 py-24 lg:grid-cols-2"
       >
-        {/* Background */}
-        <div className="absolute inset-0">
-          <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/20 blur-[140px]" />
-          <div className="absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-amber-500/10 blur-[120px]" />
-        </div>
+        {/* ================= TEXT ================= */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl"
+        >
+          {/* Badge */}
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-300">
+            <Sparkles size={15} />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 lg:grid-cols-2 lg:px-6">
-          {/* Text */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={stagger}
-            className="max-w-2xl"
-          >
-            <motion.div
-              variants={fadeUp}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-300"
+            {heroSlides[currentSlide].badge}
+          </div>
+
+          {/* Title */}
+          <h1 className="text-4xl font-black leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-7xl">
+            {heroSlides[currentSlide].title}
+
+            <span className="block text-blue-500">
+              {heroSlides[currentSlide].highlight}
+            </span>
+
+            <span className="block">
+              {heroSlides[currentSlide].endTitle}
+            </span>
+          </h1>
+
+          {/* Description */}
+          <p className="mt-7 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+            {heroSlides[currentSlide].description}
+          </p>
+
+          {/* Buttons */}
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="#harga"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-bold text-white transition hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/20"
             >
-              <Sparkles size={15} />
-              Solusi Profesional & Terpercaya
-            </motion.div>
+              Lihat Harga
+              <ArrowRight size={18} />
+            </a>
 
-            <motion.h1
-              variants={fadeUp}
-              className="text-4xl font-black leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-7xl"
+            <button
+              onClick={goWhatsApp}
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 font-bold text-white backdrop-blur transition hover:bg-white/10"
             >
-              Ubah Barang
-              <span className="block text-blue-500">
-                Tidak Terpakai
-              </span>
-              Menjadi Nilai.
-            </motion.h1>
+              <MessageCircle size={18} />
+              Chat WhatsApp
+            </button>
+          </div>
 
-            <motion.p
-              variants={fadeUp}
-              className="mt-7 max-w-xl text-base leading-8 text-slate-300 sm:text-lg"
-            >
-              Kami membantu Anda menjual barang bekas, scrap logam,
-              komputer, AC, mesin industri hingga likuidasi aset dengan
-              proses cepat, transparan dan profesional.
-            </motion.p>
+          {/* Keunggulan */}
+          <div className="mt-10 flex flex-wrap gap-6 text-sm text-slate-400">
+            <div className="flex items-center gap-2">
+              <Check className="text-blue-500" size={18} />
+              Survey Gratis
+            </div>
 
-            <motion.div
-              variants={fadeUp}
-              className="mt-9 flex flex-col gap-3 sm:flex-row"
-            >
-              <a
-                href="#harga"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-bold text-white transition hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/20"
-              >
-                Lihat Harga
-                <ArrowRight size={18} />
-              </a>
+            <div className="flex items-center gap-2">
+              <Check className="text-blue-500" size={18} />
+              Harga Kompetitif
+            </div>
 
-              <button
-                onClick={goWhatsApp}
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 font-bold text-white backdrop-blur transition hover:bg-white/10"
-              >
-                <MessageCircle size={18} />
-                Chat WhatsApp
-              </button>
-            </motion.div>
+            <div className="flex items-center gap-2">
+              <Check className="text-blue-500" size={18} />
+              Penjemputan
+            </div>
+          </div>
+        </motion.div>
 
-            <motion.div
-              variants={fadeUp}
-              className="mt-10 flex flex-wrap gap-6 text-sm text-slate-400"
-            >
-              <div className="flex items-center gap-2">
-                <Check className="text-blue-500" size={18} />
-                Survey Gratis
-              </div>
+        {/* ================= HERO IMAGE ================= */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative"
+        >
+          {/* Blue Glow */}
+          <div className="absolute -inset-5 rounded-[2rem] bg-blue-500/20 blur-3xl" />
 
-              <div className="flex items-center gap-2">
-                <Check className="text-blue-500" size={18} />
-                Harga Kompetitif
-              </div>
+          {/* Image Card */}
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 to-slate-950">
+              <Image
+                src={heroSlides[currentSlide].image}
+                alt="Limbah Mangku Jaya"
+                fill
+                priority={currentSlide === 0}
+                className="object-cover"
+              />
 
-              <div className="flex items-center gap-2">
-                <Check className="text-blue-500" size={18} />
-                Penjemputan
-              </div>
-            </motion.div>
-          </motion.div>
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
 
-          {/* Hero Visual */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="absolute -inset-5 rounded-[2rem] bg-blue-500/20 blur-3xl" />
-
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 to-slate-950">
-                <Image
-                  src="/images/hero1.jpg"
-                  alt="Limbah Mangku Jaya"
-                  fill
-                  priority
-                  className="object-cover"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-5 backdrop-blur-xl">
-                    <div className="flex items-center gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600">
-                        <Truck className="text-white" />
-                      </div>
-
-                      <div>
-                        <p className="font-bold text-white">
-                          Penjemputan Barang
-                        </p>
-                        <p className="text-sm text-slate-400">
-                          Cepat • Aman • Profesional
-                        </p>
-                      </div>
-
-                      <ArrowUpRight className="ml-auto text-blue-400" />
+              {/* Penjemputan Card */}
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-5 backdrop-blur-xl">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600">
+                      <Truck className="text-white" />
                     </div>
+
+                    <div>
+                      <p className="font-bold text-white">
+                        Penjemputan Barang
+                      </p>
+
+                      <p className="text-sm text-slate-400">
+                        Cepat • Aman • Profesional
+                      </p>
+                    </div>
+
+                    <ArrowUpRight className="ml-auto text-blue-400" />
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
 
-            {/* Floating Card */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute -bottom-39 -left-5 z-5 hidden rounded-2xl border border-white/10 bg-white p-5 shadow-2xl sm:block"
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-green-100 text-green-600">
-                  <ShieldCheck />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-500">Dipercaya Klien</p>
-                  <p className="font-black text-slate-900">100% Profesional</p>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+    {/* ================= TOMBOL KIRI ================= */}
+    <button
+    onClick={prevSlide}
+    className="absolute left-[-40px] top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-blue-600"
+    >
+    <ChevronLeft size={22} />
+    
+    </button>
+
+    {/* ================= TOMBOL KANAN ================= */}
+    <button
+    onClick={nextSlide}
+    className="absolute right-[-40px] top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-blue-600"
+    >
+    <ChevronRight size={22} />
+    </button>
+
+    {/* ================= INDIKATOR ================= */}
+    <div className="absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 gap-2">
+      {heroSlides.map((_, index) => (
+        <button
+          key={index}
+          type="button"
+          onClick={() => setCurrentSlide(index)}
+          aria-label={`Slide ${index + 1}`}
+          className={`h-2.5 rounded-full transition-all duration-300 ${
+            currentSlide === index
+              ? "w-8 bg-blue-500"
+              : "w-2.5 bg-slate-500"
+          }`}
+        />
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ================= TRUST BAR ================= */}
       <section className="border-b border-slate-100 bg-white">
@@ -539,7 +650,7 @@ export default function LandingPage() {
           <TrustItem
             icon={MapPin}
             title="Lokal"
-            description="Melayani area Jawa Barat"
+            description="Melayani area Jakarta & sekitarnya"
           />
         </div>
       </section>
@@ -999,7 +1110,7 @@ export default function LandingPage() {
           <ContactInfo
             icon={MapPin}
             title="Alamat"
-            text="Jl. Muwardi No.16, RT.7/RW.2, Grogol, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11450"
+            text="Jl. Muwardi No.16, RT.7/RW.2, Grogol, Kec. Grogol Petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11450"
           />
 
           <ContactInfo
@@ -1046,7 +1157,7 @@ export default function LandingPage() {
           </h3>
 
           <p className="mt-1 text-sm text-slate-500">
-            Jl. Muwardi No.16, RT.7/RW.2, Grogol, Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11450
+            Jl. Muwardi No.16, RT.7/RW.2, Grogol, Kec. Grogol Petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11450
           </p>
         </div>
 
@@ -1062,18 +1173,23 @@ export default function LandingPage() {
 
       {/* Map */}
       <div className="h-[400px] w-full sm:h-[450px]">
+      
+          <iframe
+            src="https://www.google.com/maps?q=-6.1620139,106.797202&output=embed"
+            className="h-[500px] w-full border-0"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Lokasi UD Limbah Mangku Jaya"
+          />
 
-        <iframe
-          src="https://www.google.com/maps?q=Pebayuran%2C%20Kabupaten%20Bekasi%2C%20Jawa%20Barat&output=embed"
-          width="100%"
-          height="100%"
-          style={{
-            border: 0,
-          }}
-          loading="lazy"
-          allowFullScreen
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Lokasi UD Limbah Mangku Jaya"
+      {/* Overlay untuk membuka Google Maps */}
+          <a
+          href="https://maps.app.goo.gl/fVBC7ezqnjT4JkGu8"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute inset-0 z-10"
+          aria-label="Buka lokasi UD Limbah Mangku Jaya di Google Maps"
         />
 
       </div>
@@ -1124,19 +1240,23 @@ export default function LandingPage() {
       {/* Brand */}
       <div>
         <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 font-black text-white">
-            LMS
-          </div>
-
-          <div>
-            <p className="text-sm font-black tracking-wide">
-              LIMBAH MANGKU JAYA
-            </p>
-            <p className="text-xs text-slate-400">
-              Professional Service
-            </p>
-          </div>
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-400/30 bg-gradient-to-br from-blue-500 to-blue-700 shadow-lg shadow-blue-600/30">
+          <span className="text-[15px] font-black italic tracking-tight text-white">
+            LMJ
+          </span>
         </div>
+
+          {/* Nama & Professional Service */}
+      <div>
+        <p className="text-sm font-black leading-none">
+          <span className="text-blue-400">LIMBAH MANGKU JAYA</span>
+        </p>
+
+        <p className="mt-1 text-[9px] uppercase tracking-[0.2em] text-slate-400">
+          Professional Service
+        </p>
+        </div>
+      </div>
 
         <p className="mt-6 max-w-xs text-sm leading-7 text-slate-400">
           Solusi profesional untuk barang bekas, scrap, mesin
@@ -1184,7 +1304,7 @@ export default function LandingPage() {
 
             <span>
               Jl. Muwardi No.16, RT.7/RW.2, Grogol,
-              Kec. Grogol petamburan,
+              Kec. Grogol Petamburan,
               <br />
               Kota Jakarta Barat, Indonesia
             </span>
@@ -1215,7 +1335,7 @@ export default function LandingPage() {
     {/* Copyright */}
     <div className="relative mt-10 border-t border-slate-800 pt-8">
   {/* Copyright - tengah */}
-  <p className="text-center text-sm text-slate-400">
+  <p className="text-center text-sm text-slate-400"> 
     © 2026 Limbah Mangku Jaya. All rights reserved.
   </p>
 
@@ -1263,7 +1383,7 @@ function NavLink({
   return (
     <a
       href={href}
-      className="text-sm font-semibold text-slate-600 transition hover:text-blue-600"
+      className="text-base font-semibold text-slate-300 transition hover:text-blue-600"
     >
       {children}
     </a>
@@ -1324,10 +1444,10 @@ function ProblemCard({
   return (
     <motion.div
       variants={fadeUp}
-      className="rounded-3xl border border-slate-200 bg-white p-7"
+      className="rounded-3xl border border-slate-200 bg-white p-5"
     >
       <div className="flex items-center justify-between">
-        <span className="text-sm font-black text-slate-300">
+        <span className="text-4xl font-black text-blue-500">
           {number}
         </span>
 
