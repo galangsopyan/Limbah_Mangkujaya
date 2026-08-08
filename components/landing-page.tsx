@@ -1123,11 +1123,10 @@ export default function LandingPage() {
             <div>
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-400/30 bg-gradient-to-br from-blue-500 to-blue-700 shadow-lg shadow-blue-600/30">
-                <span className="text-[15px] font-black italic tracking-tight text-white">
-                LMS
-                </span>
-
-                <div>
+                  <span className="text-[15px] font-black italic tracking-tight text-white">
+                    LMS
+                  </span>
+                  <div>
                   <p className="font-black">
                     LIMBAH<span className="text-blue-500">MANGKU JAYA</span>
                   </p>
