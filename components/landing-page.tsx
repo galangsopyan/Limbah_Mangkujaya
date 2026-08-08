@@ -109,7 +109,7 @@ const services = [
     title: "AC & Mesin Pendingin",
     description:
       "Pembelian dan pembongkaran AC split, AC standing, chiller, freezer dan berbagai mesin pendingin.",
-    price: "Harga kompetitif",
+    price: "Harga Kompetitif",
   },
   {
     icon: Factory,
@@ -123,7 +123,7 @@ const services = [
     title: "Bongkar Gudang & Kantor",
     description:
       "Layanan pembongkaran dan pembersihan inventaris gudang, kantor, toko, restoran maupun fasilitas perusahaan.",
-    price: "Custom quotation",
+    price: "Harga Kompetitif",
   },
   {
     icon: Truck,
