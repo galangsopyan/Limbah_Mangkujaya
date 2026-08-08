@@ -1122,11 +1122,9 @@ export default function LandingPage() {
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
             <div>
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-400/30 bg-gradient-to-br from-blue-500 to-blue-700 shadow-lg shadow-blue-600/30">
-                  <span className="text-[15px] font-black italic tracking-tight text-white">
-                    LMS
-                  </span>
-                  <div>
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600">
+                  <Recycle />
+                </div>
                   <p className="font-black">
                     LIMBAH<span className="text-blue-500">MANGKU JAYA</span>
                   </p>
