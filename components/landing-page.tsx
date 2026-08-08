@@ -329,13 +329,11 @@ const prevSlide = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   const goWhatsApp = () => {
-    window.open(
-      whatsappLink(
-        "Halo UD Limbah Mangku Jaya, saya ingin konsultasi mengenai barang/aset yang ingin saya jual."
-      ),
-      "_blank"
-    );
-  };
+  window.open(
+    "https://wa.me/6281230005406?text=Halo%20UD%20Limbah%20Mangku%20Jaya,%20saya%20ingin%20konsultasi%20mengenai%20barang%20atau%20aset%20yang%20ingin%20saya%20jual.",
+    "_blank"
+  );
+};
 
   return (
     <main className="overflow-hidden bg-white text-slate-900">
@@ -505,22 +503,29 @@ const prevSlide = () => {
 
           {/* Buttons */}
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#harga"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-bold text-white transition hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/20"
-            >
-              Lihat Harga
-              <ArrowRight size={18} />
-            </a>
+          <a
+          href="#harga"
+          onClick={(e) => {
+            e.stopPropagation();
+        }}
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-bold text-white transition hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/20"
+        >
+          Lihat Harga
+          <ArrowRight size={18} />
+          </a>
 
-            <button
-              onClick={goWhatsApp}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 font-bold text-white backdrop-blur transition hover:bg-white/10"
-            >
-              <MessageCircle size={18} />
-              Chat WhatsApp
-            </button>
-          </div>
+        <button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+        goWhatsApp();
+        }}
+          className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 font-bold text-white backdrop-blur transition hover:bg-white/10"
+        >
+        <MessageCircle size={18} />
+          Chat WhatsApp
+        </button>
+      </div>
 
           {/* Keunggulan */}
           <div className="mt-10 flex flex-wrap gap-6 text-sm text-slate-400">
