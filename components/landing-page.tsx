@@ -467,7 +467,7 @@ const prevSlide = () => {
             prevSlide();
           }
         }}
-        className="grid min-h-[760px] items-center gap-12 py-24 lg:grid-cols-2"
+        className="grid min-h-0 items-center gap-10 px-4 py-24 sm:px-6 lg:min-h-[760px] lg:grid-cols-2 lg:gap-12 lg:px-0"
       >
         {/* ================= TEXT ================= */}
         <motion.div
@@ -551,14 +551,14 @@ const prevSlide = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative"
+          className="relative w-full"
         >
           {/* Blue Glow */}
           <div className="absolute -inset-5 rounded-[2rem] bg-blue-500/20 blur-3xl" />
 
           {/* Image Card */}
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 to-slate-950">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 to-slate-950">
               <Image
                 src={heroSlides[currentSlide].image}
                 alt="Limbah Mangku Jaya"
@@ -600,17 +600,24 @@ const prevSlide = () => {
 
     {/* ================= TOMBOL KIRI ================= */}
     <button
-    onClick={prevSlide}
-    className="absolute left-[-40px] top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-blue-600"
+    type="button"
+    onClick={(e) => {
+      e.stopPropagation();
+      prevSlide();
+    }}
+    className="absolute left-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-blue-600 sm:left-4 lg:left-[-40px]"
     >
     <ChevronLeft size={22} />
-    
     </button>
 
     {/* ================= TOMBOL KANAN ================= */}
     <button
-    onClick={nextSlide}
-    className="absolute right-[-40px] top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-blue-600"
+    type="button"
+    onClick={(e) => {
+      e.stopPropagation();
+      nextSlide();
+    }}
+      className="absolute right-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-blue-600 sm:right-4 lg:right-[-40px]"
     >
     <ChevronRight size={22} />
     </button>
