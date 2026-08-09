@@ -79,7 +79,6 @@ const slides = [
   },
 ];
 
-
 const stagger = {
   hidden: {},
   visible: {
@@ -285,55 +284,51 @@ export default function LandingPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroSlides = [
-  {
-    badge: "Solusi Profesional & Terpercaya",
-    title: "Ubah Barang",
-    highlight: "Tidak Terpakai",
-    endTitle: "Menjadi Nilai.",
-    description:
-      "Kami membantu Anda menjual barang bekas, scrap logam, komputer, AC, mesin industri hingga likuidasi aset dengan proses cepat, transparan dan profesional.",
-    image: "/images/hero1.jpg",
-  },
-  {
-    badge: "Mitra Terpercaya Barang Bekas Anda",
-    title: "Kami Terima Semua",
-    highlight: "Barang Bekas",
-    endTitle: "Anda.",
-    description:
-      "Kami menerima segala jenis barang bekas Anda dengan harga kompetitif. Mulai dari AC, komputer, kulkas, hingga mesin industri. Didukung oleh tim yang berpengalaman.",
-    image: "/portfolio/portofolio3.jpg",
-  },
-  {
-    badge: "Ingin Tahu Nilai Barang Bekas Anda?",
-    title: "Proses Transparan,",
-    highlight: "Tanpa Biaya",
-    endTitle: "Tersembunyi.",
-    description:
-      "Hubungi kami sekarang untuk mendapatkan penawaran terbaik. Proses penilaian cepat, mudah, dan sepenuhnya gratis.",
-    image: "/portfolio/portofolio1.jpg",
-  },
-];
+    {
+      badge: "Solusi Profesional & Terpercaya",
+      title: "Ubah Barang",
+      highlight: "Tidak Terpakai",
+      endTitle: "Menjadi Nilai.",
+      description:
+        "Kami membantu Anda menjual barang bekas, scrap logam, komputer, AC, mesin industri hingga likuidasi aset dengan proses cepat, transparan dan profesional.",
+      image: "/images/hero1.jpg",
+    },
+    {
+      badge: "Mitra Terpercaya Barang Bekas Anda",
+      title: "Kami Terima Semua",
+      highlight: "Barang Bekas",
+      endTitle: "Anda.",
+      description:
+        "Kami menerima segala jenis barang bekas Anda dengan harga kompetitif. Mulai dari AC, komputer, kulkas, hingga mesin industri. Didukung oleh tim yang berpengalaman.",
+      image: "/portfolio/portofolio3.jpg",
+    },
+    {
+      badge: "Ingin Tahu Nilai Barang Bekas Anda?",
+      title: "Proses Transparan,",
+      highlight: "Tanpa Biaya",
+      endTitle: "Tersembunyi.",
+      description:
+        "Hubungi kami sekarang untuk mendapatkan penawaran terbaik. Proses penilaian cepat, mudah, dan sepenuhnya gratis.",
+      image: "/portfolio/portofolio1.jpg",
+    },
+  ];
 
   const nextSlide = () => {
-  setCurrentSlide((prev) =>
-    prev === heroSlides.length - 1 ? 0 : prev + 1
-  );
-};
+    setCurrentSlide((prev) => (prev === heroSlides.length - 1 ? 0 : prev + 1));
+  };
 
-const prevSlide = () => {
-  setCurrentSlide((prev) =>
-    prev === 0 ? heroSlides.length - 1 : prev - 1
-  );
-};
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1));
+  };
   const [mobileMenu, setMobileMenu] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   const goWhatsApp = () => {
-  window.open(
-    "https://wa.me/6281230005406?text=Halo%20UD%20Limbah%20Mangku%20Jaya,%20saya%20ingin%20konsultasi%20mengenai%20barang%20atau%20aset%20yang%20ingin%20saya%20jual.",
-    "_blank"
-  );
-};
+    window.open(
+      "https://wa.me/6281230005406?text=Halo%20UD%20Limbah%20Mangku%20Jaya,%20saya%20ingin%20konsultasi%20mengenai%20barang%20atau%20aset%20yang%20ingin%20saya%20jual.",
+      "_blank",
+    );
+  };
 
   return (
     <main className="overflow-hidden bg-white text-slate-900">
@@ -348,10 +343,9 @@ const prevSlide = () => {
                 className="flex items-center gap-3 text-white"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-blue-400/30 bg-gradient-to-br from-blue-500 to-blue-700 shadow-lg shadow-blue-600/30">
-                <span className="text-[15px] font-black italic tracking-tight text-white">
-                LMJ
-                </span>
-                
+                  <span className="text-[15px] font-black italic tracking-tight text-white">
+                    LMJ
+                  </span>
                 </div>
 
                 <div>
@@ -430,216 +424,223 @@ const prevSlide = () => {
       </header>
 
       {/* ================= HERO ================= */}
-<section
-  id="beranda"
-  className="relative overflow-hidden bg-slate-950"
->
-  {/* Background Glow */}
-  <div className="pointer-events-none absolute inset-0">
-    <div className="absolute left-1/4 top-1/3 h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[140px]" />
-    <div className="absolute right-0 top-1/4 h-[400px] w-[400px] rounded-full bg-blue-500/10 blur-[120px]" />
-  </div>
+      <section id="beranda" className="relative overflow-hidden bg-slate-950">
+        {/* Background Glow */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/4 top-1/3 h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[140px]" />
+          <div className="absolute right-0 top-1/4 h-[400px] w-[400px] rounded-full bg-blue-500/10 blur-[120px]" />
+        </div>
 
-  {/* Carousel */}
-  <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={currentSlide}
-        initial={{ opacity: 0, x: 80 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -80 }}
-        transition={{ duration: 0.45, ease: "easeOut" }}
-        drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
-        dragElastic={0.15}
-        onDragEnd={(_, info) => {
-          if (
-            info.offset.x < -80 ||
-            info.velocity.x < -500
-          ) {
-            nextSlide();
-          }
+        {/* Carousel */}
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, x: 80 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -80 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.15}
+              onDragEnd={(_, info) => {
+                if (info.offset.x < -80 || info.velocity.x < -500) {
+                  nextSlide();
+                }
 
-          if (
-            info.offset.x > 80 ||
-            info.velocity.x > 500
-          ) {
-            prevSlide();
-          }
-        }}
-        className="grid min-h-0 items-center gap-10 px-4 py-24 sm:px-6 lg:min-h-[760px] lg:grid-cols-2 lg:gap-12 lg:px-0"
-      >
-        {/* ================= TEXT ================= */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-2xl"
-        >
-          {/* Badge */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-300">
-            <Sparkles size={15} />
+                if (info.offset.x > 80 || info.velocity.x > 500) {
+                  prevSlide();
+                }
+              }}
+              className="grid min-h-0 items-center gap-10 px-4 py-24 sm:px-6 lg:min-h-[760px] lg:grid-cols-2 lg:gap-12 lg:px-0"
+            >
+              {/* ================= TEXT ================= */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="max-w-2xl"
+              >
+                {/* Badge */}
+                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-300">
+                  <Sparkles size={15} />
 
-            {heroSlides[currentSlide].badge}
-          </div>
+                  {heroSlides[currentSlide].badge}
+                </div>
 
-          {/* Title */}
-          <h1 className="text-4xl font-black leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-7xl">
-            {heroSlides[currentSlide].title}
+                {/* Title */}
+                <h1 className="text-4xl font-black leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-7xl">
+                  {heroSlides[currentSlide].title}
 
-            <span className="block text-blue-500">
-              {heroSlides[currentSlide].highlight}
-            </span>
+                  <span className="block text-blue-500">
+                    {heroSlides[currentSlide].highlight}
+                  </span>
 
-            <span className="block">
-              {heroSlides[currentSlide].endTitle}
-            </span>
-          </h1>
+                  <span className="block">
+                    {heroSlides[currentSlide].endTitle}
+                  </span>
+                </h1>
 
-          {/* Description */}
-          <p className="mt-7 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
-            {heroSlides[currentSlide].description}
-          </p>
+                {/* Description */}
+                <p className="mt-7 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+                  {heroSlides[currentSlide].description}
+                </p>
 
-          {/* Buttons */}
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-          <a
-          href="#harga"
-          onClick={(e) => {
-            e.stopPropagation();
-        }}
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-bold text-white transition hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/20"
-        >
-          Lihat Harga
-          <ArrowRight size={18} />
-          </a>
+                {/* Buttons */}
+                <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    href="#harga"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-bold text-white transition hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/20"
+                  >
+                    Lihat Harga
+                    <ArrowRight size={18} />
+                  </a>
 
-        <button
-        type="button"
-        onClick={(e) => {
-          e.stopPropagation();
-        goWhatsApp();
-        }}
-          className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 font-bold text-white backdrop-blur transition hover:bg-white/10"
-        >
-        <MessageCircle size={18} />
-          Chat WhatsApp
-        </button>
-      </div>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      goWhatsApp();
+                    }}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 font-bold text-white backdrop-blur transition hover:bg-white/10"
+                  >
+                    <MessageCircle size={18} />
+                    Chat WhatsApp
+                  </button>
+                </div>
 
-          {/* Keunggulan */}
-          <div className="mt-10 flex flex-wrap gap-6 text-sm text-slate-400">
-            <div className="flex items-center gap-2">
-              <Check className="text-blue-500" size={18} />
-              Survey Gratis
-            </div>
+                {/* Keunggulan */}
+                <div className="mt-10 flex flex-wrap gap-6 text-sm text-slate-400">
+                  <div className="flex items-center gap-2">
+                    <Check className="text-blue-500" size={18} />
+                    Survey Gratis
+                  </div>
 
-            <div className="flex items-center gap-2">
-              <Check className="text-blue-500" size={18} />
-              Harga Kompetitif
-            </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="text-blue-500" size={18} />
+                    Harga Kompetitif
+                  </div>
 
-            <div className="flex items-center gap-2">
-              <Check className="text-blue-500" size={18} />
-              Penjemputan
-            </div>
-          </div>
-        </motion.div>
-
-        {/* ================= HERO IMAGE ================= */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative w-full"
-        >
-          {/* Blue Glow */}
-          <div className="absolute -inset-5 rounded-[2rem] bg-blue-500/20 blur-3xl" />
-
-          {/* Image Card */}
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 to-slate-950">
-              <Image
-                src={heroSlides[currentSlide].image}
-                alt="Limbah Mangku Jaya"
-                fill
-                priority={currentSlide === 0}
-                className="object-cover"
-              />
-
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-
-              {/* Penjemputan Card */}
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-5 backdrop-blur-xl">
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600">
-                      <Truck className="text-white" />
-                    </div>
-
-                    <div>
-                      <p className="font-bold text-white">
-                        Penjemputan Barang
-                      </p>
-
-                      <p className="text-sm text-slate-400">
-                        Cepat • Aman • Profesional
-                      </p>
-                    </div>
-
-                    <ArrowUpRight className="ml-auto text-blue-400" />
+                  <div className="flex items-center gap-2">
+                    <Check className="text-blue-500" size={18} />
+                    Penjemputan
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+
+              {/* ================= HERO IMAGE ================= */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative w-full"
+              >
+                {/* Blue Glow */}
+                <div className="absolute -inset-5 rounded-[2rem] bg-blue-500/20 blur-3xl" />
+
+                {/* Image Card */}
+                <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 to-slate-950">
+                    <Image
+                      src={heroSlides[currentSlide].image}
+                      alt="Limbah Mangku Jaya"
+                      fill
+                      priority={currentSlide === 0}
+                      className="object-cover"
+                    />
+
+                    {/* Dark Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+
+                    <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur">
+                      {/* GAMBAR */}
+                      <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 to-slate-950">
+                        <Image
+                          src={heroSlides[currentSlide].image}
+                          alt="Limbah Mangku Jaya"
+                          fill
+                          priority={currentSlide === 0}
+                          className="object-cover"
+                        />
+
+                        {/* Dark Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+                      </div>
+
+                      {/* CARD DI BAWAH GAMBAR */}
+                      <div className="mt-3">
+                        <div className="rounded-2xl border border-white/10 bg-slate-950/90 p-5 shadow-xl backdrop-blur-xl">
+                          <div className="flex items-center gap-4">
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-600">
+                              <Truck className="text-white" />
+                            </div>
+
+                            <div>
+                              <p className="font-bold text-white">
+                                Penjemputan Barang
+                              </p>
+
+                              <p className="text-sm text-slate-400">
+                                Cepat • Aman • Profesional
+                              </p>
+                            </div>
+
+                            <ArrowUpRight className="ml-auto text-blue-400" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* ================= TOMBOL KIRI ================= */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              prevSlide();
+            }}
+            className="absolute left-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-blue-600 sm:left-4 lg:left-[-40px]"
+          >
+            <ChevronLeft size={22} />
+          </button>
+
+          {/* ================= TOMBOL KANAN ================= */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              nextSlide();
+            }}
+            className="absolute right-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-blue-600 sm:right-4 lg:right-[-40px]"
+          >
+            <ChevronRight size={22} />
+          </button>
+
+          {/* ================= INDIKATOR ================= */}
+          <div className="absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 gap-2">
+            {heroSlides.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => setCurrentSlide(index)}
+                aria-label={`Slide ${index + 1}`}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  currentSlide === index
+                    ? "w-8 bg-blue-500"
+                    : "w-2.5 bg-slate-500"
+                }`}
+              />
+            ))}
           </div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
-
-    {/* ================= TOMBOL KIRI ================= */}
-    <button
-    type="button"
-    onClick={(e) => {
-      e.stopPropagation();
-      prevSlide();
-    }}
-    className="absolute left-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-blue-600 sm:left-4 lg:left-[-40px]"
-    >
-    <ChevronLeft size={22} />
-    </button>
-
-    {/* ================= TOMBOL KANAN ================= */}
-    <button
-    type="button"
-    onClick={(e) => {
-      e.stopPropagation();
-      nextSlide();
-    }}
-      className="absolute right-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-blue-600 sm:right-4 lg:right-[-40px]"
-    >
-    <ChevronRight size={22} />
-    </button>
-
-    {/* ================= INDIKATOR ================= */}
-    <div className="absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 gap-2">
-      {heroSlides.map((_, index) => (
-        <button
-          key={index}
-          type="button"
-          onClick={() => setCurrentSlide(index)}
-          aria-label={`Slide ${index + 1}`}
-          className={`h-2.5 rounded-full transition-all duration-300 ${
-            currentSlide === index
-              ? "w-8 bg-blue-500"
-              : "w-2.5 bg-slate-500"
-          }`}
-        />
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* ================= TRUST BAR ================= */}
       <section className="border-b border-slate-100 bg-white">
@@ -805,9 +806,7 @@ const prevSlide = () => {
                       </span>
                     </div>
 
-                    <h3 className="mt-7 text-xl font-black">
-                      {step.title}
-                    </h3>
+                    <h3 className="mt-7 text-xl font-black">{step.title}</h3>
 
                     <p className="mt-3 text-sm leading-7 text-slate-400">
                       {step.description}
@@ -857,9 +856,7 @@ const prevSlide = () => {
                       {item.category}
                     </p>
 
-                    <h3 className="mt-1 font-black text-white">
-                      {item.title}
-                    </h3>
+                    <h3 className="mt-1 font-black text-white">{item.title}</h3>
                   </div>
                 </div>
               </motion.div>
@@ -909,9 +906,7 @@ const prevSlide = () => {
                     <p className="font-bold text-slate-900">
                       {testimonial.name}
                     </p>
-                    <p className="text-xs text-slate-500">
-                      {testimonial.role}
-                    </p>
+                    <p className="text-xs text-slate-500">{testimonial.role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -960,9 +955,7 @@ const prevSlide = () => {
                   {pkg.name}
                 </p>
 
-                <h3 className="mt-4 text-3xl font-black">
-                  {pkg.price}
-                </h3>
+                <h3 className="mt-4 text-3xl font-black">{pkg.price}</h3>
 
                 <p
                   className={`mt-2 text-sm ${
@@ -996,9 +989,7 @@ const prevSlide = () => {
 
                       <span
                         className={
-                          pkg.popular
-                            ? "text-slate-300"
-                            : "text-slate-600"
+                          pkg.popular ? "text-slate-300" : "text-slate-600"
                         }
                       >
                         {feature}
@@ -1043,9 +1034,7 @@ const prevSlide = () => {
                   className="overflow-hidden rounded-2xl border border-slate-200 bg-white"
                 >
                   <button
-                    onClick={() =>
-                      setActiveFaq(active ? null : index)
-                    }
+                    onClick={() => setActiveFaq(active ? null : index)}
                     className="flex w-full items-center justify-between gap-5 p-6 text-left"
                   >
                     <span className="font-bold text-slate-900">
@@ -1054,9 +1043,7 @@ const prevSlide = () => {
 
                     <ChevronDown
                       className={`shrink-0 transition ${
-                        active
-                          ? "rotate-180 text-blue-600"
-                          : "text-slate-400"
+                        active ? "rotate-180 text-blue-600" : "text-slate-400"
                       }`}
                     />
                   </button>
@@ -1080,136 +1067,122 @@ const prevSlide = () => {
       </section>
 
       {/* ================= CONTACT ================= */}
-<section
-  id="kontak"
-  className="bg-white py-24"
->
-  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section id="kontak" className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Header */}
+          <div className="mb-14 text-center">
+            <span className="inline-flex rounded-full bg-green-50 px-4 py-2 text-sm font-bold text-green-600">
+              HUBUNGI KAMI
+            </span>
 
-    {/* Header */}
-    <div className="mb-14 text-center">
-      <span className="inline-flex rounded-full bg-green-50 px-4 py-2 text-sm font-bold text-green-600">
-        HUBUNGI KAMI
-      </span>
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
+              Punya barang yang ingin dijual?
+            </h2>
 
-      <h2 className="mt-4 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
-        Punya barang yang ingin dijual?
-      </h2>
+            <p className="mx-auto mt-5 max-w-2xl leading-8 text-slate-600">
+              Kirimkan informasi barang Anda. Tim kami akan membantu memberikan
+              estimasi dan mengatur jadwal survey.
+            </p>
+          </div>
 
-      <p className="mx-auto mt-5 max-w-2xl leading-8 text-slate-600">
-        Kirimkan informasi barang Anda. Tim kami akan membantu
-        memberikan estimasi dan mengatur jadwal survey.
-      </p>
-    </div>
+          {/* Content */}
+          <div className="grid gap-8 lg:grid-cols-2">
+            {/* ================= LEFT : CONTACT INFO ================= */}
+            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
+              <h3 className="text-2xl font-bold text-slate-950">
+                Informasi Kontak
+              </h3>
 
-    {/* Content */}
-    <div className="grid gap-8 lg:grid-cols-2">
+              <p className="mt-3 leading-7 text-slate-600">
+                Hubungi kami untuk konsultasi, penawaran harga, survey lokasi,
+                maupun informasi layanan borongan dan jual beli barang bekas.
+              </p>
 
-      {/* ================= LEFT : CONTACT INFO ================= */}
-      <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
+              <div className="mt-8 space-y-5">
+                <ContactInfo
+                  icon={MapPin}
+                  title="Alamat"
+                  text="Jl. Muwardi No.16, RT.7/RW.2, Grogol, Kec. Grogol Petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11450"
+                />
 
-        <h3 className="text-2xl font-bold text-slate-950">
-          Informasi Kontak
-        </h3>
+                <ContactInfo
+                  icon={Phone}
+                  title="WhatsApp"
+                  text="+62 81320005406"
+                />
 
-        <p className="mt-3 leading-7 text-slate-600">
-          Hubungi kami untuk konsultasi, penawaran harga, survey lokasi,
-          maupun informasi layanan borongan dan jual beli barang bekas.
-        </p>
+                <ContactInfo
+                  icon={Mail}
+                  title="Email"
+                  text="limbahmangkujaya@gmail.com"
+                />
+              </div>
 
-        <div className="mt-8 space-y-5">
+              {/* WhatsApp Button */}
+              <a
+                href={`https://wa.me/${WHATSAPP}?text=Halo%20UD%20Limbah%20Mangku%20Jaya,%20saya%20ingin%20konsultasi.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex w-full items-center justify-center rounded-xl bg-green-600 px-6 py-4 font-bold text-white transition duration-300 hover:bg-green-700 hover:shadow-lg"
+              >
+                Chat WhatsApp
+              </a>
+            </div>
 
-          <ContactInfo
-            icon={MapPin}
-            title="Alamat"
-            text="Jl. Muwardi No.16, RT.7/RW.2, Grogol, Kec. Grogol Petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11450"
-          />
+            {/* ================= RIGHT : FORM ================= */}
+            <div>
+              <ContactForm whatsapp={WHATSAPP} />
+            </div>
+          </div>
 
-          <ContactInfo
-            icon={Phone}
-            title="WhatsApp"
-            text="+62 81320005406"
-          />
+          {/* ================= GOOGLE MAP ================= */}
+          <div className="mt-12 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+            {/* Map Header */}
+            <div className="flex flex-col gap-3 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h3 className="text-xl font-bold text-slate-950">
+                  Lokasi Kami
+                </h3>
 
-          <ContactInfo
-            icon={Mail}
-            title="Email"
-            text="limbahmangkujaya@gmail.com"
-          />
+                <p className="mt-1 text-sm text-slate-500">
+                  Jl. Muwardi No.16, RT.7/RW.2, Grogol, Kec. Grogol Petamburan,
+                  Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11450
+                </p>
+              </div>
 
+              <a
+                href="https://maps.app.goo.gl/fVBC7ezqnjT4JkGu8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-fit items-center rounded-lg bg-slate-900 px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-700"
+              >
+                Buka di Google Maps
+              </a>
+            </div>
+
+            {/* Map */}
+            <div className="h-[400px] w-full sm:h-[450px]">
+              <iframe
+                src="https://www.google.com/maps?q=-6.1620139,106.797202&output=embed"
+                className="h-[500px] w-full border-0"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Lokasi UD Limbah Mangku Jaya"
+              />
+
+              {/* Overlay untuk membuka Google Maps */}
+              <a
+                href="https://maps.app.goo.gl/fVBC7ezqnjT4JkGu8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 z-10"
+                aria-label="Buka lokasi UD Limbah Mangku Jaya di Google Maps"
+              />
+            </div>
+          </div>
         </div>
-
-        {/* WhatsApp Button */}
-        <a
-          href={`https://wa.me/${WHATSAPP}?text=Halo%20UD%20Limbah%20Mangku%20Jaya,%20saya%20ingin%20konsultasi.`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8 inline-flex w-full items-center justify-center rounded-xl bg-green-600 px-6 py-4 font-bold text-white transition duration-300 hover:bg-green-700 hover:shadow-lg"
-        >
-          Chat WhatsApp
-        </a>
-
-      </div>
-
-      {/* ================= RIGHT : FORM ================= */}
-      <div>
-        <ContactForm whatsapp={WHATSAPP} />
-      </div>
-
-    </div>
-
-    {/* ================= GOOGLE MAP ================= */}
-    <div className="mt-12 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-
-      {/* Map Header */}
-      <div className="flex flex-col gap-3 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h3 className="text-xl font-bold text-slate-950">
-            Lokasi Kami
-          </h3>
-
-          <p className="mt-1 text-sm text-slate-500">
-            Jl. Muwardi No.16, RT.7/RW.2, Grogol, Kec. Grogol Petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11450
-          </p>
-        </div>
-
-        <a
-          href="https://maps.app.goo.gl/fVBC7ezqnjT4JkGu8"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex w-fit items-center rounded-lg bg-slate-900 px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-700"
-        >
-          Buka di Google Maps
-        </a>
-      </div>
-
-      {/* Map */}
-      <div className="h-[400px] w-full sm:h-[450px]">
-      
-          <iframe
-            src="https://www.google.com/maps?q=-6.1620139,106.797202&output=embed"
-            className="h-[500px] w-full border-0"
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Lokasi UD Limbah Mangku Jaya"
-          />
-
-      {/* Overlay untuk membuka Google Maps */}
-          <a
-          href="https://maps.app.goo.gl/fVBC7ezqnjT4JkGu8"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute inset-0 z-10"
-          aria-label="Buka lokasi UD Limbah Mangku Jaya di Google Maps"
-        />
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
+      </section>
 
       {/* ================= FINAL CTA ================= */}
       <section className="px-5 pb-10 lg:px-6">
@@ -1219,17 +1192,15 @@ const prevSlide = () => {
 
           <div className="relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div className="max-w-2xl">
-              <p className="font-bold text-blue-100">
-                SIAP MEMULAI?
-              </p>
+              <p className="font-bold text-blue-100">SIAP MEMULAI?</p>
 
               <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
                 Jangan biarkan aset Anda terus menumpuk.
               </h2>
 
               <p className="mt-5 leading-7 text-blue-100">
-                Konsultasikan barang atau aset Anda sekarang dan
-                dapatkan penawaran terbaik dari tim kami.
+                Konsultasikan barang atau aset Anda sekarang dan dapatkan
+                penawaran terbaik dari tim kami.
               </p>
             </div>
 
@@ -1244,143 +1215,129 @@ const prevSlide = () => {
         </div>
       </section>
 
-     {/* ================= FOOTER ================= */}
-<footer className="bg-slate-950 text-white text-center">
-  <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      {/* ================= FOOTER ================= */}
+      <footer className="bg-slate-950 text-white text-center">
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Brand */}
+            <div>
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-400/30 bg-gradient-to-br from-blue-500 to-blue-700 shadow-lg shadow-blue-600/30">
+                  <span className="text-[15px] font-black italic tracking-tight text-white">
+                    LMJ
+                  </span>
+                </div>
 
-      {/* Brand */}
-      <div>
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-400/30 bg-gradient-to-br from-blue-500 to-blue-700 shadow-lg shadow-blue-600/30">
-          <span className="text-[15px] font-black italic tracking-tight text-white">
-            LMJ
-          </span>
-        </div>
+                {/* Nama & Professional Service */}
+                <div>
+                  <p className="text-sm font-black leading-none">
+                    <span className="text-blue-400">LIMBAH MANGKU JAYA</span>
+                  </p>
 
-          {/* Nama & Professional Service */}
-      <div>
-        <p className="text-sm font-black leading-none">
-          <span className="text-blue-400">LIMBAH MANGKU JAYA</span>
-        </p>
+                  <p className="mt-1 text-[9px] uppercase tracking-[0.2em] text-slate-400">
+                    Professional Service
+                  </p>
+                </div>
+              </div>
 
-        <p className="mt-1 text-[9px] uppercase tracking-[0.2em] text-slate-400">
-          Professional Service
-        </p>
-        </div>
-      </div>
+              <p className="mt-6 max-w-xs text-sm leading-7 text-slate-400">
+                Solusi profesional untuk barang bekas, scrap, mesin industri dan
+                likuidasi aset.
+              </p>
+            </div>
 
-        <p className="mt-6 max-w-xs text-sm leading-7 text-slate-400">
-          Solusi profesional untuk barang bekas, scrap, mesin
-          industri dan likuidasi aset.
-        </p>
-      </div>
+            {/* Menu */}
+            <div>
+              <h3 className="font-black">Menu</h3>
 
-      {/* Menu */}
-      <div>
-        <h3 className="font-black">Menu</h3>
+              <div className="mt-5 space-y-3 text-sm text-slate-400">
+                <FooterLink href="#beranda" text="Beranda" />
+                <FooterLink href="#layanan" text="Layanan" />
+                <FooterLink href="#portofolio" text="Portofolio" />
+                <FooterLink href="#harga" text="Harga" />
+                <FooterLink href="#kontak" text="Kontak" />
+              </div>
+            </div>
 
-        <div className="mt-5 space-y-3 text-sm text-slate-400">
-          <FooterLink href="#beranda" text="Beranda" />
-          <FooterLink href="#layanan" text="Layanan" />
-          <FooterLink href="#portofolio" text="Portofolio" />
-          <FooterLink href="#harga" text="Harga" />
-          <FooterLink href="#kontak" text="Kontak" />
-        </div>
-      </div>
+            {/* Layanan */}
+            <div>
+              <h3 className="font-black">Layanan</h3>
 
-      {/* Layanan */}
-      <div>
-        <h3 className="font-black">Layanan</h3>
+              <div className="mt-5 space-y-3 text-sm text-slate-400">
+                <p>Besi Tua &amp; Scrap</p>
+                <p>Komputer &amp; Elektronik</p>
+                <p>AC &amp; Mesin Pendingin</p>
+                <p>Mesin Industri</p>
+                <p>Bongkar Gudang</p>
+              </div>
+            </div>
 
-        <div className="mt-5 space-y-3 text-sm text-slate-400">
-          <p>Besi Tua &amp; Scrap</p>
-          <p>Komputer &amp; Elektronik</p>
-          <p>AC &amp; Mesin Pendingin</p>
-          <p>Mesin Industri</p>
-          <p>Bongkar Gudang</p>
-        </div>
-      </div>
+            {/* Alamat */}
+            <div>
+              <h3 className="font-black">Alamat Kami</h3>
 
-      {/* Alamat */}
-      <div>
-        <h3 className="font-black">Alamat Kami</h3>
+              <div className="mt-5 space-y-4 text-sm text-slate-400">
+                <div className="flex gap-3">
+                  <MapPin className="shrink-0 text-blue-500" size={18} />
 
-        <div className="mt-5 space-y-4 text-sm text-slate-400">
+                  <span>
+                    Jl. Muwardi No.16, RT.7/RW.2, Grogol, Kec. Grogol
+                    Petamburan,
+                    <br />
+                    Kota Jakarta Barat, Indonesia
+                  </span>
+                </div>
 
-          <div className="flex gap-3">
-            <MapPin
-              className="shrink-0 text-blue-500"
-              size={18}
-            />
+                <div className="flex gap-3">
+                  <Phone className="shrink-0 text-blue-500" size={18} />
 
-            <span>
-              Jl. Muwardi No.16, RT.7/RW.2, Grogol,
-              Kec. Grogol Petamburan,
-              <br />
-              Kota Jakarta Barat, Indonesia
-            </span>
+                  <span>+62 81320005406</span>
+                </div>
+
+                <div className="flex gap-3">
+                  <Mail className="shrink-0 text-blue-500" size={18} />
+
+                  <span>limbahmangkujaya@gmail.com</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="flex gap-3">
-            <Phone
-              className="shrink-0 text-blue-500"
-              size={18}
-            />
+          {/* Copyright */}
+          <div className="relative mt-10 border-t border-slate-800 pt-8">
+            {/* Copyright - tengah */}
+            <p className="text-center text-sm text-slate-400">
+              © 2026 Limbah Mangku Jaya. All rights reserved.
+            </p>
 
-            <span>+62 81320005406</span>
+            {/* Social media - kanan */}
+            <div className="mt-4 flex justify-center gap-6 text-sm text-slate-400 sm:absolute sm:right-0 sm:top-8 sm:mt-0">
+              <a href="#" className="hover:text-white transition">
+                Instagram
+              </a>
+
+              <a href="#" className="hover:text-white transition">
+                Facebook
+              </a>
+
+              <a href="#" className="hover:text-white transition">
+                TikTok
+              </a>
+            </div>
           </div>
-
-          <div className="flex gap-3">
-            <Mail
-              className="shrink-0 text-blue-500"
-              size={18}
-            />
-
-            <span>limbahmangkujaya@gmail.com</span>
-          </div>
-
         </div>
-      </div>
-    </div>
+      </footer>
 
-    {/* Copyright */}
-    <div className="relative mt-10 border-t border-slate-800 pt-8">
-  {/* Copyright - tengah */}
-  <p className="text-center text-sm text-slate-400"> 
-    © 2026 Limbah Mangku Jaya. All rights reserved.
-  </p>
-
-      {/* Social media - kanan */}
-  <div className="mt-4 flex justify-center gap-6 text-sm text-slate-400 sm:absolute sm:right-0 sm:top-8 sm:mt-0">
-    <a href="#" className="hover:text-white transition">
-      Instagram
-    </a>
-
-    <a href="#" className="hover:text-white transition">
-      Facebook
-    </a>
-
-    <a href="#" className="hover:text-white transition">
-      TikTok
-    </a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-{/* ================= FLOATING WHATSAPP ================= */}
-<button
-  onClick={goWhatsApp}
-  aria-label="Chat WhatsApp"
-  className="fixed bottom-6 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-2xl shadow-green-900/30 transition hover:scale-110 hover:bg-green-600"
->
-  <MessageCircle size={25} />
-</button>
-
-</main>
-);
-
+      {/* ================= FLOATING WHATSAPP ================= */}
+      <button
+        onClick={goWhatsApp}
+        aria-label="Chat WhatsApp"
+        className="fixed bottom-6 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-2xl shadow-green-900/30 transition hover:scale-110 hover:bg-green-600"
+      >
+        <MessageCircle size={25} />
+      </button>
+    </main>
+  );
 }
 
 /* ================= COMPONENTS ================= */
@@ -1459,9 +1416,7 @@ function ProblemCard({
       className="rounded-3xl border border-slate-200 bg-white p-5"
     >
       <div className="flex items-center justify-between">
-        <span className="text-4xl font-black text-blue-500">
-          {number}
-        </span>
+        <span className="text-4xl font-black text-blue-500">{number}</span>
 
         <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-green-50 text-green-500">
           <Check size={20} strokeWidth={3} />
@@ -1470,18 +1425,14 @@ function ProblemCard({
 
       <h3 className="mt-6 text-xl font-black">{title}</h3>
 
-      <p className="mt-3 text-sm leading-7 text-slate-500">
-        {description}
-      </p>
+      <p className="mt-3 text-sm leading-7 text-slate-500">{description}</p>
 
       <div className="mt-6 rounded-2xl bg-blue-50 p-5">
         <p className="text-xs font-black uppercase tracking-wider text-blue-600">
           Solusi Kami
         </p>
 
-        <p className="mt-2 text-sm leading-6 text-slate-700">
-          {solution}
-        </p>
+        <p className="mt-2 text-sm leading-6 text-slate-700">{solution}</p>
       </div>
     </motion.div>
   );
@@ -1503,13 +1454,9 @@ function TrustItem({
       </div>
 
       <div>
-        <p className="text-sm font-black text-slate-900">
-          {title}
-        </p>
+        <p className="text-sm font-black text-slate-900">{title}</p>
 
-        <p className="text-xs text-slate-500">
-          {description}
-        </p>
+        <p className="text-xs text-slate-500">{description}</p>
       </div>
     </div>
   );
@@ -1535,26 +1482,15 @@ function ContactInfo({
           {title}
         </p>
 
-        <p className="mt-1 text-sm font-semibold text-slate-700">
-          {text}
-        </p>
+        <p className="mt-1 text-sm font-semibold text-slate-700">{text}</p>
       </div>
     </div>
   );
 }
 
-function FooterLink({
-  href,
-  text,
-}: {
-  href: string;
-  text: string;
-}) {
+function FooterLink({ href, text }: { href: string; text: string }) {
   return (
-    <a
-      href={href}
-      className="transition hover:text-white"
-    >
+    <a href={href} className="transition hover:text-white">
       {text}
     </a>
   );
