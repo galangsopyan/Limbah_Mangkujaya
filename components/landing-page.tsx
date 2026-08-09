@@ -1163,15 +1163,7 @@ export default function LandingPage() {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Lokasi UD Limbah Mangku Jaya"
               />
-
-              {/* Overlay untuk membuka Google Maps */}
-              <a
-                href="https://maps.app.goo.gl/fVBC7ezqnjT4JkGu8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute inset-0 z-10"
-                aria-label="Buka lokasi UD Limbah Mangku Jaya di Google Maps"
-              />
+              
             </div>
           </div>
         </div>
