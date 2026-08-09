@@ -541,56 +541,49 @@ export default function LandingPage() {
                 {/* Blue Glow */}
                 <div className="absolute -inset-5 rounded-[2rem] bg-blue-500/20 blur-3xl" />
 
-                {/* Image Card */}
-                <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur">
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 to-slate-950">
-                    <Image
-                      src={heroSlides[currentSlide].image}
-                      alt="Limbah Mangku Jaya"
-                      fill
-                      priority={currentSlide === 0}
-                      className="object-cover"
-                    />
+                {/* Image + Card */}
+                <div className="relative">
+                  {/* IMAGE */}
+                  <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 to-slate-950">
+                      <Image
+                        src={heroSlides[currentSlide].image}
+                        alt="Limbah Mangku Jaya"
+                        fill
+                        priority={currentSlide === 0}
+                        className="object-cover"
+                      />
 
-                    {/* Dark Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+                      {/* Dark Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+                    </div>
+                  </div>
 
-                    <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur">
-                      {/* GAMBAR */}
-                      <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 to-slate-950">
-                        <Image
-                          src={heroSlides[currentSlide].image}
-                          alt="Limbah Mangku Jaya"
-                          fill
-                          priority={currentSlide === 0}
-                          className="object-cover"
-                        />
-
-                        {/* Dark Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-                      </div>
-
-                      {/* CARD DI BAWAH GAMBAR */}
-                      <div className="mt-3">
-                        <div className="rounded-2xl border border-white/10 bg-slate-950/90 p-5 shadow-xl backdrop-blur-xl">
-                          <div className="flex items-center gap-4">
-                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-600">
-                              <Truck className="text-white" />
-                            </div>
-
-                            <div>
-                              <p className="font-bold text-white">
-                                Penjemputan Barang
-                              </p>
-
-                              <p className="text-sm text-slate-400">
-                                Cepat • Aman • Profesional
-                              </p>
-                            </div>
-
-                            <ArrowUpRight className="ml-auto text-blue-400" />
-                          </div>
+                  {/* PENJEMPUTAN CARD */}
+                  <div className="relative z-10 px-3 pt-5 sm:px-6">
+                    <div className="rounded-2xl border border-white/10 bg-slate-950/95 p-5 shadow-2xl backdrop-blur-xl">
+                      <div className="flex items-center gap-4">
+                        {/* Icon */}
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-600 shadow-lg shadow-blue-600/30">
+                          <Truck className="text-white" size={22} />
                         </div>
+
+                        {/* Text */}
+                        <div>
+                          <p className="font-bold text-white">
+                            Penjemputan Barang
+                          </p>
+
+                          <p className="text-sm text-slate-400">
+                            Cepat • Aman • Profesional
+                          </p>
+                        </div>
+
+                        {/* Arrow */}
+                        <ArrowUpRight
+                          className="ml-auto text-blue-400"
+                          size={22}
+                        />
                       </div>
                     </div>
                   </div>
