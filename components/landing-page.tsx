@@ -335,7 +335,7 @@ export default function LandingPage() {
       {/* ================= NAVBAR ================= */}
       <header className="fixed left-0 right-0 top-0 z-50">
         <div className="mx-auto mt-4 max-w-7xl px-4 lg:px-6">
-          <nav className="rounded-2xl border border-white/20 bg-slate-950/80 px-5 py-4 shadow-xl backdrop-blur-xl">
+          <nav className="rounded-2xl border border-white/15 bg-slate-950/85 px-4 py-3 shadow-2xl shadow-black/20 backdrop-blur-xl sm:px-5 sm:py-3.5">
             <div className="flex items-center justify-between">
               {/* Logo */}
               <Link
@@ -452,7 +452,7 @@ export default function LandingPage() {
                   prevSlide();
                 }
               }}
-              className="grid min-h-0 items-center gap-10 px-4 py-24 sm:px-6 lg:min-h-[760px] lg:grid-cols-2 lg:gap-12 lg:px-0"
+              className="grid min-h-screen items-center gap-10 px-4 py-28 sm:px-6 lg:min-h-[720px] lg:grid-cols-2 lg:gap-12 lg:px-0 lg:py-24"
             >
               {/* ================= TEXT ================= */}
               <motion.div
@@ -469,7 +469,7 @@ export default function LandingPage() {
                 </div>
 
                 {/* Title */}
-                <h1 className="text-4xl font-black leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-7xl">
+                <h1 className="text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-7xl">
                   {heroSlides[currentSlide].title}
 
                   <span className="block text-blue-500">
@@ -482,7 +482,7 @@ export default function LandingPage() {
                 </h1>
 
                 {/* Description */}
-                <p className="mt-7 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+                <p className="mt-6 max-w-xl text-sm leading-7 text-slate-300 sm:mt-7 sm:text-lg sm:leading-8">
                   {heroSlides[currentSlide].description}
                 </p>
 
@@ -545,7 +545,7 @@ export default function LandingPage() {
                 <div className="relative">
                   {/* IMAGE */}
                   <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur">
-                    <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 to-slate-950">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 to-slate-950">
                       <Image
                         src={heroSlides[currentSlide].image}
                         alt="Limbah Mangku Jaya"
@@ -1163,7 +1163,7 @@ export default function LandingPage() {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Lokasi UD Limbah Mangku Jaya"
               />
-              
+
             </div>
           </div>
         </div>
