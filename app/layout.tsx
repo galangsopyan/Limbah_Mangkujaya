@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://limbahmangkujaya.com"),
 
   title: {
-    default: "UD Sekawan Teknik",
-    template: "%s | UD Sekawan Teknik",
+    default: "UD Limbah Mangku Jaya",
+    template: "%s | UD Limbah Mangku Jaya",
   },
 
   description:
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
 
   authors: [
     {
-      name: "UD Sekawan Teknik",
+      name: "UD Limbah Mangku Jaya",
     },
   ],
 
-  creator: "UD Sekawan Teknik",
+  creator: "UD Limbah Mangku Jaya",
 
   openGraph: {
-    title: "UD Sekawan Teknik",
+    title: "UD Limbah Mangku Jaya",
     description:
       "Solusi profesional untuk barang bekas, scrap dan likuidasi aset.",
     type: "website",

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "bongkar gudang",
     "jual barang bekas",
     "jasa Pebayuran",
-    "Sekawan Teknik",
+    "Limbah Mangku Jaya",
   ],
   openGraph: {
     title: "Limbah Mangku Jaya | Jasa Borongan & Likuidasi Aset",
