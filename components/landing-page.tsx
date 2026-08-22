@@ -35,7 +35,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ContactForm from "./contact-form";
 
-const WHATSAPP = "6281320005406";
+const WHATSAPP = "6283829496222";
 
 const whatsappLink = (message: string) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
@@ -325,7 +325,7 @@ export default function LandingPage() {
 
   const goWhatsApp = () => {
     window.open(
-      "https://wa.me/6281230005406?text=Halo%20UD%20Limbah%20Mangku%20Jaya,%20saya%20ingin%20konsultasi%20mengenai%20barang%20atau%20aset%20yang%20ingin%20saya%20jual.",
+      "https://wa.me/6283829496222?text=Halo%20UD%20Limbah%20Mangku%20Jaya,%20saya%20ingin%20konsultasi%20mengenai%20barang%20atau%20aset%20yang%20ingin%20saya%20jual.",
       "_blank",
     );
   };
@@ -1101,7 +1101,7 @@ export default function LandingPage() {
                 <ContactInfo
                   icon={Phone}
                   title="WhatsApp"
-                  text="+62 81320005406"
+                  text="+62 83829496222"
                 />
 
                 <ContactInfo
@@ -1276,7 +1276,7 @@ export default function LandingPage() {
                 <div className="flex gap-3">
                   <Phone className="shrink-0 text-blue-500" size={18} />
 
-                  <span>+62 81320005406</span>
+                  <span>+62 83829496222</span>
                 </div>
 
                 <div className="flex gap-3">
